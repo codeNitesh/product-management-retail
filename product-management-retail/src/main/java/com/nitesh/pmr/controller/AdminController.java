@@ -81,7 +81,7 @@ public class AdminController {
 		  for (MultipartFile file : files) {
 			  Path fileNameAndPath = Paths.get(uploadDirectory, file.getOriginalFilename());
 			  
-			  product.setImages("Product-images/" + file.getOriginalFilename());
+			  product.setImages("images/" + file.getOriginalFilename());
 			  
 			  fileNames.append(file.getOriginalFilename()+" ");
 			  try {
