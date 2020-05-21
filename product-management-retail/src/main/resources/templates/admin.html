@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: header">
+
+<title>Retail Shop</title>
+</head>
+<body>
+	<nav th:replace="layout :: navbar"></nav>
+	<br>
+	<center>
+		<h2>ADMIN PANNEL</h2>
+	</center>
+	<br>
+	
+	<div class="card text-center">
+
+		<div class="card-body">
+			<h5 class="card-title">Add a new Product</h5>
+			<div class="container">
+				<img th:src="@{/New Product.png}" width="100" />
+			</div>
+			<p class="card-text">You can easily add products by clicking the
+				below button</p>
+			<a href="/admin/new-product" class="btn btn-primary">Add New
+				Product</a>
+		</div>
+
+	</div>
+
+	<div class="card text-center">
+
+		<div class="card-body">
+
+			<h5 class="card-title">Add a new Category</h5>
+			<div class="container">
+				<img th:src="@{/Category.png}" width="100" />
+			</div>
+			<p class="card-text">You can easily add category by clicking the
+				below button</p>
+			<a href="/admin/new-category" class="btn btn-primary">Add New
+				Category</a>
+		</div>
+
+	</div>
+
+
+	<!-- <footer th:replace="layout :: footer"></footer> -->
+
+
+</body>
+</html>

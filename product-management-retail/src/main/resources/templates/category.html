@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: header">
+
+<title>Retail Shop</title>
+</head>
+<nav th:replace="layout :: navbar"></nav>
+<body>
+	
+	<br>
+
+	<div class="container">
+	<div class="row">
+	<div th:replace="products-layout :: divbar"></div>
+			<div class="col-sm-3 col-md-8">
+
+				<h2>
+					<center>All Products</center>
+				</h2>
+
+				<div class="card-columns">
+
+					<div class="col-mt-6" th:each="product: ${product}">
+						<div class="card">
+							<img th:src="${product.images}" width="200" />
+							<div class="card-body">
+								<h5 class="card-title" th:text="${product.name}"></h5>
+								<p class="card-text" th:text="${product.description}" />
+								<p class="btn btn-secondary" th:text="${product.price}" />
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

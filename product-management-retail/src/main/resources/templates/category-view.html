@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: header">
+
+<title>Retail Shop</title>
+</head>
+<nav th:replace="layout :: navbar"></nav>
+<body>
+
+     <div class="container">
+		<h2>Categories</h2>
+		<div class="list-group">
+			<a href="/products"
+				class="list-group-item list-group-item-action active">All
+				categories</a>
+			<div th:each="category: ${category}">
+				<a th:href="@{|/products/${category.categoryId}|}"
+					class="list-group-item list-group-item-action"
+					th:text="${category.categoryTitle}"></a>
+			</div>
+		</div>
+		
+		</div>
+</body>
+</html>

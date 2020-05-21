@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: header">
+
+<title>Retail Shop</title>
+</head>
+<body>
+
+	<nav th:replace="layout :: navbar"></nav>
+
+
+	<div class="modal-dialog">
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
+
+			</div>
+			<div class="modal-body">
+
+				<form action="/admin/new-product/save" th:object="${product}" enctype="multipart/form-data"
+					method="POST">
+
+					<label>Enter Product Name:</label><br> <input
+						style="width: 300px;" type="text" placeholder="Product Name"
+						th:field="${product.name}"> <br> <br> <label>Enter
+						Product Description:</label><br>
+					<textarea style="width: 300px; height: 120px;" type="text"
+						placeholder="Enter Product Description"
+						th:field="${product.description}"></textarea>
+					<br> <br> <label>Enter Product Price:</label><br> <input
+						style="width: 300px;" type="text" placeholder=""
+						th:field="${product.price}"> <br> <br> <label>Select
+						Product Image:</label><br>
+						
+						<input style="width: 300px;" type="file" name="files">
+						
+					<br> <br> <label>Select Category:</label><br> <select
+						style="width: 300px;" th:field="${product.category}"
+						class="form-control" id="sel1">
+
+						<option th:each="category : ${allCategory}"
+							th:value="${category.categoryId}"
+							th:text="${category.categoryTitle}"></option>
+					</select>
+
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary"
+							style="margin-left: auto; margin-right: auto; display: block; margin-top: 2%; margin-bottom: 0%">Save
+							Product</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

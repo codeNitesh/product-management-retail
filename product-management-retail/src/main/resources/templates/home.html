@@ -1,0 +1,66 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: header">
+
+<title>Retail Shop</title>
+</head>
+<body>
+	<nav th:replace="layout :: navbar"></nav>
+	<br>
+	<center>
+		<h2>Welcome to ABC Retail</h2><br>
+		<h5>Please choose from the following options:</h5>
+	</center>
+	
+	
+	<br>
+	<div class="card text-center">
+		<div class="card-body">
+			<h5 class="card-title">Get the list of products</h5>
+			<div class="container">
+				<img th:src="@{/Products.png}" width="100" />
+			</div>
+			<p class="card-text">You can easily see the list of products by
+				clicking the below button</p>
+			<a href="/products" class="btn btn-primary">Show all Products</a>
+		</div>
+
+	</div>
+
+	<div class="card text-center">
+
+		<div class="card-body">
+			<h5 class="card-title">Get the list of categories</h5>
+			<div class="container">
+				<img th:src="@{/New Product.png}" width="100" />
+			</div>
+			<p class="card-text">You can easily see different categories by
+				clicking the below button</p>
+			<a href="/category" class="btn btn-primary">Show all
+				Categories</a>
+		</div>
+
+	</div>
+	
+	<div class="card text-center">
+
+		<div class="card-body">
+			<h5 class="card-title">Got to the Admin Page</h5>
+			<div class="container">
+				<img th:src="@{/New Product.png}" width="100" />
+			</div>
+			<p class="card-text">Are you the Admin? You can easily add new products, categories by
+				clicking the below button</p>
+			<a href="/admin/" class="btn btn-primary">Login as Admin</a>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>

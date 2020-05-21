@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: header">
+
+<title>Retail Shop</title>
+</head>
+<body>
+	<center>
+		<nav th:replace="layout :: navbar"></nav>
+
+		<br> <br>
+
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Add New
+						Category</h5>
+				</div>
+				<div class="modal-body">
+
+					<form action="/admin/new-category/save" th:object="${category}"
+						method="POST">
+
+						<input style="width: 300px;" type="text"
+							placeholder="Category Title" th:field="*{categoryTitle}">
+						<br>
+						<br>
+
+						<textarea style="width: 300px; height: 120px;" type="text"
+							placeholder="Enter Category Descritpion"
+							th:field="*{categoryDescription}"></textarea>
+						<br>
+						<br>
+	
+
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary"
+							style="margin-left:auto;margin-right:auto;display:block;margin-top:2%;margin-bottom:0%">Save
+								Category</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+</body>
+</html>
